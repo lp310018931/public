@@ -1,5 +1,5 @@
 
-set (CMAKE_CXX_COMPILER "/usr/bin/g++")
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 add_compile_options(-std=c++11 -g)
 
 
@@ -10,8 +10,8 @@ add_executable(DemoClient DemoClient.cpp VSomeipImpl.cpp)
 add_executable(DemoSubscribeClient DemoSubscribeClient.cpp VSomeipImpl.cpp)
 add_executable(DemoSubscribeServer DemoSubscribeServer.cpp VSomeipImpl.cpp)
 
-file (GLOB_RECURSE vsomeip_lib_files "${PROJECT_SOURCE_DIR}/lib/lib/vsomeip/*.*")
-file (GLOB_RECURSE boost_lib_files "${PROJECT_SOURCE_DIR}/lib/lib/boost/*.*")
+file(GLOB_RECURSE vsomeip_lib_files "${PROJECT_SOURCE_DIR}/lib/lib/vsomeip/*.*")
+file(GLOB_RECURSE boost_lib_files "${PROJECT_SOURCE_DIR}/lib/lib/boost/*.*")
 
 target_link_libraries(DemoServer  ${boost_lib_files})
 target_link_libraries(DemoServer  ${vsomeip_lib_files})

@@ -14,19 +14,19 @@ namespace ara
         };
 
         class serviceIdentifierType {
-            bool operator==(const serviceIdentifierType& other) const;
-            bool operator<(const serviceIdentifierType& other) const;
+            bool operator==(const serviceIdentifierType& other(const;
+            bool operator<(const serviceIdentifierType& other(const;
             serviceIdentifierType& operator=(const serviceIdentifierType& other);
-            ara::core::StringView ToString() const;
+            ara::core::StringView ToString((const;
         };
 
         class InstanceIdentifier {
         public:
-            static ara::core::Result<InstanceIdentifier> Create(StringViewserializedFormat) noexcept;
+            static ara::core::Result<InstanceIdentifier> Create(StringViewserializedFormat(noexcept;
             explicit InstanceIdentifier(ara::core::StringView serializedFormat);
-            ara::core::StringView ToString() const;
-            bool operator==(const InstanceIdentifier& other) const;
-            bool operator<(const InstanceIdentifier& other) const;
+            ara::core::StringView ToString((const;
+            bool operator==(const InstanceIdentifier& other(const;
+            bool operator<(const InstanceIdentifier& other(const;
             InstanceIdentifier& operator=(const InstanceIdentifier& other);
         };
 
@@ -36,8 +36,8 @@ namespace ara
             internal::ServiceId serviceIdentifier;
             internal::InstanceId instanceIdentifier;
             std::uint32_t uid;
-            bool operator==(const FindServiceHandle& other) const;
-            bool operator<(const FindServiceHandle& other) const;
+            bool operator==(const FindServiceHandle& other(const;
+            bool operator<(const FindServiceHandle& other(const;
             FindServiceHandle& operator=(const FindServiceHandle& other);
         };
 
@@ -47,10 +47,10 @@ namespace ara
             HandleType& operator=(const HandleType&);
             HandleType(HandleType &&);
             HandleType& operator=(HandleType &&);
-            ~HandleType() noexcept;
-            bool operator==(const HandleType& other) const;
-            bool operator<(const HandleType& other) const;
-            const ara::com::InstanceIdentifier& GetInstanceId() const;
+            ~HandleType((noexcept;
+            bool operator==(const HandleType& other(const;
+            bool operator<(const HandleType& other(const;
+            const ara::com::InstanceIdentifier& GetInstanceId((const;
         };
 
         template <typename T>
@@ -63,37 +63,37 @@ namespace ara
         template< typename T >
         class SamplePtr {
             // Default constructor
-            constexpr SamplePtr() noexcept;
+            constexpr SamplePtr((noexcept;
             // semantically equivalent to Default constructor
-            constexpr SamplePtr(std::nullptr_t) noexcept;
+            constexpr SamplePtr(std::nullptr_t(noexcept;
             // Copy constructor is deleted
-            SamplePtr(const SamplePtr&) = delete;
+            SamplePtr(const SamplePtr&(= delete;
             // Move constructor
-            SamplePtr(SamplePtr&&) noexcept;
+            SamplePtr(SamplePtr&&(noexcept;
             // Destructor
-            ~SamplePtr() noexcept;
+            ~SamplePtr((noexcept;
             // Default copy assignment operator is deleted
-            SamplePtr& operator=(const SamplePtr&) = delete;
+            SamplePtr& operator=(const SamplePtr&(= delete;
             // Assignment of nullptr_t
-            SamplePtr& operator=(std::nullptr_t) noexcept;
+            SamplePtr& operator=(std::nullptr_t(noexcept;
             // Move assignment operator
-            SamplePtr& operator=(SamplePtr&&) noexcept;
+            SamplePtr& operator=(SamplePtr&&(noexcept;
             // Dereferences the stored pointer
-            T& operator*() const noexcept;
-            T* operator->() const noexcept;
+            T& operator*((const noexcept;
+            T* operator->((const noexcept;
             //Checks if the stored pointer is null
-            explicit operator bool() const noexept;
+            explicit operator bool((const noexept;
             // Swaps the managed object
-            void Swap(SamplePtr&) noexcept;
+            void Swap(SamplePtr&(noexcept;
             //Replaces the managed object
-            void Reset(std::nullptr_t) noexcept;
+            void Reset(std::nullptr_t(noexcept;
             //Returns the stored object
-            T* Get() const noexcept;
+            T* Get((const noexcept;
             // Returns the end 2 end protection check result
-            ara::com::e2e::ProfileCheckStatus GetProfileCheckStatus() const noexcept;
+            ara::com::e2e::ProfileCheckStatus GetProfileCheckStatus((const noexcept;
         };
 
-        ara::com::e2e::ProfileCheckStatus GetProfileCheckStatus() const noexcept;
+        ara::com::e2e::ProfileCheckStatus GetProfileCheckStatus((const noexcept;
 
         template <typename T>
         using SampleAllocateePtr = std::unique_ptr<T>;
