@@ -1,0 +1,47 @@
+{
+	"version": "2.0.0",
+
+	"tasks": [
+		{
+			"label": "build-sh",
+			"command": "sh",
+			"linux": {
+                "args": [
+                    "rebuild.sh"
+                ]
+            },
+			"options": {
+                "cwd": "${workspaceRoot}",
+            }
+		},
+        {
+            "label": "cmake",
+            "command": "cmake",
+			"args": [
+                ".."
+            ],
+			"options": {
+                "cwd": "${workspaceRoot}/build"
+            }
+		},
+        {
+            "label": "make",
+            "command": "make",
+			"args": [
+                "-j"
+            ],
+			"options": {
+                "cwd": "${workspaceRoot}/build"
+            }
+		},
+		{
+			"label": "VSomeip_build",
+			"dependsOn":[
+				"build-sh",
+				//"cmake",
+				//"make"
+			]
+		}
+	]
+}
+
